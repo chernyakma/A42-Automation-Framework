@@ -24,5 +24,12 @@ public class LoginTests extends BaseTest {
         WebElement submitLoginButton = driver.findElement(By.cssSelector("button[type='submit']"));
         Assert.assertTrue(submitLoginButton.isDisplayed());
     }
+    @Test
+    public void RegistrationNovigation() {
+        WebElement RegistrationButton = driver.findElement(By.cssSelector("[id='hel']"));
+        RegistrationButton.click();
+        WebElement RegisterButton = driver.findElement(By.cssSelector("#button"));
+        Assert.assertTrue(RegisterButton.isDisplayed());
+    }
 
 }
