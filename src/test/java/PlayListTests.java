@@ -28,12 +28,4 @@ public class PlayListTests extends BaseTest{
 
         WebElement Notification = driver.findElement(By.cssSelector(".success.show"));
         Assert.assertTrue(Notification.isDisplayed());}
-
-
-
-
-
-
-
     }
-
