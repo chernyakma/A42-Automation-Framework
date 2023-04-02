@@ -6,7 +6,7 @@ import org.testng.annotations.Test;
 
 public class SongsTests extends BaseTest{
     @Test
-    public void PlaySong() throws InterruptedException {
+    public void playSong() throws InterruptedException {
 
         login("chernyakma75@gmail.com","te$t$tudent" );
 

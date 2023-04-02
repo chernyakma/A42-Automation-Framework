@@ -15,7 +15,7 @@ import java.time.Duration;
 public class BaseTest {
     static WebDriver driver;
     WebDriverWait wait;
-   // public String url = "https://bbb.testpro.io/";
+    public String url = "https://bbb.testpro.io/";
 
 
     @BeforeSuite
@@ -24,8 +24,8 @@ public class BaseTest {
     }
 
     @BeforeMethod
-    @Parameters({"BaseURL"})
-    public void setUpBrowser(String BaseURL) {
+
+    public void setUpBrowser() {
         ChromeOptions options = new ChromeOptions();
         options.addArguments("--disable-notifications");
         options.addArguments("--remote-allow-origins=*");
@@ -33,7 +33,7 @@ public class BaseTest {
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
         wait = new WebDriverWait(driver, Duration.ofSeconds(4));
         driver.manage().window().maximize();
-        String url = BaseURL;
+
         driver.get(url);
     }
 
