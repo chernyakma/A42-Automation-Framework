@@ -8,6 +8,7 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.BeforeSuite;
+import org.testng.annotations.Parameters;
 
 import java.time.Duration;
 
@@ -23,6 +24,7 @@ public class BaseTest {
     }
 
     @BeforeMethod
+
     public void setUpBrowser() {
         ChromeOptions options = new ChromeOptions();
         options.addArguments("--disable-notifications");
@@ -31,6 +33,7 @@ public class BaseTest {
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
         wait = new WebDriverWait(driver, Duration.ofSeconds(4));
         driver.manage().window().maximize();
+
         driver.get(url);
     }
 
