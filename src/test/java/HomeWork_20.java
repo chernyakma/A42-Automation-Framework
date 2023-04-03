@@ -6,33 +6,32 @@ import org.testng.Assert;
 import org.testng.annotations.Test;
 
 public class HomeWork_20 extends BaseTest {
-        @Test
-        public void successfulLoginTest() {
-            login("chernyakma75@gmail.com", "te$t$tudent");
-            WebElement avatar = wait.until(ExpectedConditions.visibilityOfElementLocated(By.cssSelector("a .avatar")));
-            Assert.assertTrue(avatar.isDisplayed());
-        }
+    @Test
+    public void successfulLoginTest() {
+        login("chernyakma75@gmail.com", "te$t$tudent");
+        WebElement avatar = wait.until(ExpectedConditions.visibilityOfElementLocated(By.cssSelector("a .avatar")));
+        Assert.assertTrue(avatar.isDisplayed());
+    }
+    @Test
+    public void wrongPasswordLoginTest() {
+        login("chernyakma75@gmail.com", "te$t$tuden");
+        WebElement submitLoginButton = wait.until(ExpectedConditions.visibilityOfElementLocated(By.cssSelector("button[type='submit']")));
+        Assert.assertTrue(submitLoginButton.isDisplayed());
+    }
 
-        @Test
-        public void wrongPasswordLoginTest() {
-            login("chernyakma75@gmail.com", "te$t$tuden");
-            WebElement submitLoginButton = wait.until(ExpectedConditions.visibilityOfElementLocated(By.cssSelector("button[type='submit']")));
-            Assert.assertTrue(submitLoginButton.isDisplayed());
-        }
-
-        @Test
-        public void emptyPasswordLoginTest() {
-            login("chernyakma75@gmail.com", "");
-            WebElement submitLoginButton = wait.until(ExpectedConditions.visibilityOfElementLocated(By.cssSelector("button[type='submit']")));
-            Assert.assertTrue(submitLoginButton.isDisplayed());
-        }
-        @Test
-        public void RegistrationNovigation() {
-            WebElement RegistrationButton = wait.until(ExpectedConditions.elementToBeClickable(By.cssSelector("[id='hel']")));
-            RegistrationButton.click();
-            WebElement RegisterButton = driver.findElement(By.cssSelector("#button"));
-            Assert.assertTrue(RegisterButton.isDisplayed());
-        }
+    @Test
+    public void emptyPasswordLoginTest() {
+        login("chernyakma75@gmail.com", "");
+        WebElement submitLoginButton = wait.until(ExpectedConditions.visibilityOfElementLocated(By.cssSelector("button[type='submit']")));
+        Assert.assertTrue(submitLoginButton.isDisplayed());
+    }
+    @Test
+    public void RegistrationNovigation() {
+        WebElement RegistrationButton = wait.until(ExpectedConditions.elementToBeClickable(By.cssSelector("[id='hel']")));
+        RegistrationButton.click();
+        WebElement RegisterButton = wait.until(ExpectedConditions.visibilityOfElementLocated(By.cssSelector("#button")));
+        Assert.assertTrue(RegisterButton.isDisplayed());
+    }
     @Test
     public void playSong() throws InterruptedException {
 
@@ -56,7 +55,7 @@ public class HomeWork_20 extends BaseTest {
         deletePlayListButton.click();
         // WebElement ok = driver.findElement(By.cssSelector("[class='ok']"));
         // ok.click();
-        WebElement SuccessShow = wait.until(ExpectedConditions.presenceOfElementLocated(By.cssSelector(".success.show")));
+        WebElement SuccessShow = wait.until(ExpectedConditions.visibilityOfElementLocated(By.cssSelector(".success.show")));
         Assert.assertTrue(SuccessShow.isDisplayed());
 
 
@@ -64,5 +63,4 @@ public class HomeWork_20 extends BaseTest {
     }
 
 }
-
 
