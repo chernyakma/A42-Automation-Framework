@@ -1,5 +1,6 @@
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
@@ -7,7 +8,7 @@ public class LoginTests extends BaseTest {
     @Test
     public void successfulLoginTest() {
         login("demo@class.com", "te$t$tudent");
-        WebElement avatar = driver.findElement(By.cssSelector("a .avatar"));
+        WebElement avatar = wait.until(ExpectedConditions.visibilityOfElementLocated(By.cssSelector("a .avatar")));
         Assert.assertTrue(avatar.isDisplayed());
     }
 
