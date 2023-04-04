@@ -26,14 +26,14 @@ public class HomeWork_20 extends BaseTest {
         Assert.assertTrue(submitLoginButton.isDisplayed());
     }
     @Test
-    public void RegistrationNovigation() {
+    public void registrationNovigation() {
         WebElement RegistrationButton = wait.until(ExpectedConditions.elementToBeClickable(By.cssSelector("[id='hel']")));
         RegistrationButton.click();
         WebElement RegisterButton = wait.until(ExpectedConditions.visibilityOfElementLocated(By.cssSelector("#button")));
         Assert.assertTrue(RegisterButton.isDisplayed());
     }
     @Test
-    public void playSong() throws InterruptedException {
+    public void playSong()  {
 
         login("chernyakma75@gmail.com","te$t$tudent" );
 
@@ -53,8 +53,6 @@ public class HomeWork_20 extends BaseTest {
         playlist.click();
         WebElement deletePlayListButton = wait.until(ExpectedConditions.elementToBeClickable(By.cssSelector("[title='Delete this playlist']")));
         deletePlayListButton.click();
-        // WebElement ok = driver.findElement(By.cssSelector("[class='ok']"));
-        // ok.click();
         WebElement SuccessShow = wait.until(ExpectedConditions.visibilityOfElementLocated(By.cssSelector(".success.show")));
         Assert.assertTrue(SuccessShow.isDisplayed());
 
