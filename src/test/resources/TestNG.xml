@@ -11,6 +11,7 @@
             <class name="SongsTests"/>
             <class name="PlaylistTests"/>
             <class name="HomeWork_20"/>
+            <class name="renamePlaylist"/>
         </classes>
     </test>
 </suite>
