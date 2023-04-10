@@ -2,7 +2,7 @@ import io.github.bonigarcia.wdm.WebDriverManager;
 import org.testng.annotations.*;
 import pages.BasePage;
 
-public class BaseTest {
+public class BaseTest extends BasePage{
     protected final BasePage basePage = new BasePage();
     public String url = "https://bbb.testpro.io/";
 
