@@ -41,5 +41,6 @@ public class BasePage {
     }
     public WebDriver getDriver(){
         return driver;
+
     }
 }
