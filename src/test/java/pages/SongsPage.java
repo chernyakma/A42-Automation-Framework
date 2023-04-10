@@ -6,10 +6,10 @@ import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 
 public class SongsPage extends BasePage{
-    By playControlPanel = By.cssSelector(".player-controls");
-    By playSongBtn = By.cssSelector("[title='Play or resume']");
+    private By playControlPanel = By.cssSelector(".player-controls");
+    private By playSongBtn = By.cssSelector("[title='Play or resume']");
 
-    By pauseBtn = By.cssSelector("[class='pause']");
+    private By pauseBtn = By.cssSelector("[class='pause']");
 
 
         public void hoverOverPlayControl() {

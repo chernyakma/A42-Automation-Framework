@@ -4,14 +4,14 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 
-public class loginPage extends BasePage{
+public class LoginPage extends BasePage{
     @FindBy(css = "[type='password']" )
-    WebElement passwordInput;
+    private WebElement passwordInput;
 
     @FindBy(xpath = "//input[@type='email']")
-    WebElement emailInput;
+    private WebElement emailInput;
 
-    By submitBtn = By.cssSelector("button[type='submit']");
+    private By submitBtn = By.cssSelector("button[type='submit']");
 
     public void login(String email, String password) {
         enterEmail(email);

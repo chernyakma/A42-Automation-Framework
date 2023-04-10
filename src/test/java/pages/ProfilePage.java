@@ -5,7 +5,7 @@ import org.openqa.selenium.WebElement;
 
 import java.util.UUID;
 
-public class profilePage extends BasePage{
+public class ProfilePage extends BasePage{
     public String getProfileName() {
         WebElement profileName = driver.findElement(By.cssSelector("span.name"));
         return profileName.getText();

@@ -6,12 +6,12 @@ import org.openqa.selenium.WebElement;
 import java.util.List;
 
 public class HomePage extends BasePage{
-    By searchField = By.cssSelector("[type='search']");
-    By viewAllButton = By.cssSelector("[data-test='view-all-songs-btn']");
+   private By searchField = By.cssSelector("[type='search']");
+    private By viewAllButton = By.cssSelector("[data-test='view-all-songs-btn']");
 
-    By successNotification = By.cssSelector(".success.show");
-    By searchResults = By.cssSelector("#songResultsWrapper .song-item");
-    By avatarIcon = By.cssSelector("a .avatar");
+    private By successNotification = By.cssSelector(".success.show");
+    private By searchResults = By.cssSelector("#songResultsWrapper .song-item");
+    private By avatarIcon = By.cssSelector("a .avatar");
 
     public void search(String text) {
         WebElement searchInput =

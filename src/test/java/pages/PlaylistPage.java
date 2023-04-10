@@ -7,8 +7,8 @@ import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 
 public class PlaylistPage extends BasePage {
-    By myPlayList = By.cssSelector("[class='playlist playlist']>a");
-    By delete = By.cssSelector("[title='Delete this playlist']");
+    private By myPlayList = By.cssSelector("[class='playlist playlist']>a");
+    private By delete = By.cssSelector("[title='Delete this playlist']");
     public void clickPlaylist(){
         WebElement playListElement = waitUntilClickable(myPlayList);
         playListElement.click();

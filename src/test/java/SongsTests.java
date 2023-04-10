@@ -1,15 +1,10 @@
-import org.openqa.selenium.By;
-import org.openqa.selenium.WebElement;
-import org.openqa.selenium.interactions.Actions;
-import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.testng.Assert;
 import org.testng.annotations.Test;
-import pages.BasePage;
 import pages.SongsPage;
-import pages.loginPage;
+import pages.LoginPage;
 
 public class SongsTests extends BaseTest{
-    loginPage loginPage=new loginPage();
+    LoginPage loginPage=new LoginPage();
     SongsPage songsPage=new SongsPage();
    @Test
 

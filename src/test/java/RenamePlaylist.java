@@ -1,19 +1,13 @@
-import org.openqa.selenium.By;
-import org.openqa.selenium.Keys;
-import org.openqa.selenium.WebElement;
-import org.openqa.selenium.interactions.Actions;
-import org.openqa.selenium.support.ui.ExpectedConditions;
-import org.testng.Assert;
 import org.testng.annotations.Test;
 import pages.HomePage;
 import pages.PlaylistPage;
-import pages.loginPage;
-import pages.profilePage;
+import pages.LoginPage;
+import pages.ProfilePage;
 
-public class renamePlaylist extends BaseTest{
-    pages.loginPage loginPage=new loginPage();
+public class RenamePlaylist extends BaseTest{
+    LoginPage loginPage=new LoginPage();
     PlaylistPage playlistPage= new PlaylistPage();
-    pages.profilePage profilePage= new profilePage();
+    ProfilePage profilePage= new ProfilePage();
     HomePage homePage = new HomePage();
 
 @Test

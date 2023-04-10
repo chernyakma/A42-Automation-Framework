@@ -1,19 +1,14 @@
-import org.openqa.selenium.By;
-import org.openqa.selenium.WebElement;
 import org.testng.Assert;
 import org.testng.annotations.Test;
-import pages.BasePage;
 import pages.HomePage;
-import pages.loginPage;
-import pages.profilePage;
-
-import java.util.UUID;
+import pages.LoginPage;
+import pages.ProfilePage;
 
 import static org.testng.Assert.assertEquals;
 
 public class ProfileTests extends BaseTest {
-    loginPage loginPage=new loginPage();
-    profilePage profilePage= new profilePage();
+    LoginPage loginPage=new LoginPage();
+    ProfilePage profilePage= new ProfilePage();
     HomePage homePage = new HomePage();
 
     @Test

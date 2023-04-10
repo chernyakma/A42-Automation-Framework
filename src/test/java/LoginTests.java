@@ -3,10 +3,10 @@ import org.openqa.selenium.WebElement;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 import pages.HomePage;
-import pages.loginPage;
+import pages.LoginPage;
 
 public class LoginTests extends BaseTest {
-    loginPage loginPage=new loginPage();
+    LoginPage loginPage=new LoginPage();
     HomePage homePage = new HomePage();
     @Test
     public void successfulLoginTest() {
