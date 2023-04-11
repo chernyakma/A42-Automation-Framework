@@ -2,20 +2,22 @@ import io.github.bonigarcia.wdm.WebDriverManager;
 import org.testng.annotations.*;
 import pages.BasePage;
 
+import java.net.MalformedURLException;
+
 public class BaseTest extends BasePage{
     protected final BasePage basePage = new BasePage();
     public String url = "https://bbb.testpro.io/";
 
 
 
-    @BeforeSuite
-    static void setupClass() {
-        WebDriverManager.chromedriver().setup();
-    }
+  //  @BeforeSuite
+ //   static void setupClass() {
+  //      WebDriverManager.chromedriver().setup();
+   // }
 
     @BeforeMethod
 
-    public void setUpBrowser() {
+    public void setUpBrowser() throws MalformedURLException {
         basePage.initBrowser(url);
     }
 
