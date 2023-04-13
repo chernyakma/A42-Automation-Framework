@@ -4,7 +4,7 @@ import pages.SongsPage;
 import pages.LoginPage;
 
 public class SongsTests extends BaseTest{
-    LoginPage loginPage=new LoginPage();
+    LoginPage loginPage=new LoginPage(getDriver());
     SongsPage songsPage=new SongsPage();
    @Test
 

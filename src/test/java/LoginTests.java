@@ -12,8 +12,8 @@ import pages.LoginPage;
 
 
 public class LoginTests extends BaseTest {
-    LoginPage loginPage=new LoginPage();
-    HomePage homePage = new HomePage();
+    LoginPage loginPage=new LoginPage(getDriver());
+    HomePage homePage = new HomePage(getDriver());
 
 
 

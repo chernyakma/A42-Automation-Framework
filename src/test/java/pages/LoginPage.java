@@ -6,15 +6,20 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 
 public class LoginPage extends BasePage{
-    public static LoginPage loginPage(){
-        return new LoginPage();
+    public LoginPage(WebDriver driver) {
+        super();
     }
-    @FindBy(css = "[type='password']" )
-    private WebElement passwordInput;
-   // By passwordField= By.cssSelector("[type='password']");
-    @FindBy(xpath = "//input[@type='email']")
-    private WebElement emailInput;
-    //By emailField = By.xpath( "//input[@type='email']");
+
+    public static LoginPage loginPage(){
+
+        return new LoginPage(driver);
+    }
+    //@FindBy(css = "[type='password']" )
+  //  private WebElement passwordInput;
+    private By passwordField= By.cssSelector("[type='password']");
+   // @FindBy(xpath = "//input[@type='email']")
+   // private WebElement emailInput;
+   private By emailField = By.xpath( "//input[@type='email']");
     private By submitBtn = By.cssSelector("button[type='submit']");
     private By registrationButton = By.cssSelector("[id='hel']");
     private By registerButton = By.cssSelector("#button");
@@ -29,6 +34,7 @@ public class LoginPage extends BasePage{
     }
 
     public  LoginPage enterPassword(String password) {
+        WebElement passwordInput = getDriver().findElement(passwordField);
       //  WebElement passwordInput = waitUntilVisible(passwordField);
         passwordInput.click();
         passwordInput.clear();
@@ -37,6 +43,7 @@ public class LoginPage extends BasePage{
     }
 
     public  LoginPage enterEmail(String email) {
+        WebElement emailInput = getDriver().findElement(emailField);
       //  WebElement emailInput = waitUntilVisible(emailField);
         emailInput.click();
         emailInput.clear();

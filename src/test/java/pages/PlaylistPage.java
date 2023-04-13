@@ -2,6 +2,7 @@ package pages;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.Keys;
+import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.ExpectedConditions;
@@ -9,6 +10,9 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 public class PlaylistPage extends BasePage {
     private By myPlayList = By.cssSelector("[class='playlist playlist']>a");
     private By delete = By.cssSelector("[title='Delete this playlist']");
+    public PlaylistPage(WebDriver driver){
+        super();
+    }
     public void clickPlaylist(){
         WebElement playListElement = waitUntilClickable(myPlayList);
         playListElement.click();

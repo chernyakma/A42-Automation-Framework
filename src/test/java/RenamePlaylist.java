@@ -5,10 +5,10 @@ import pages.LoginPage;
 import pages.ProfilePage;
 
 public class RenamePlaylist extends BaseTest{
-    LoginPage loginPage=new LoginPage();
-    PlaylistPage playlistPage= new PlaylistPage();
-    ProfilePage profilePage= new ProfilePage();
-    HomePage homePage = new HomePage();
+    LoginPage loginPage=new LoginPage(getDriver());
+    PlaylistPage playlistPage= new PlaylistPage(getDriver());
+    ProfilePage profilePage= new ProfilePage(getDriver());
+    HomePage homePage = new HomePage(getDriver());
 
 @Test
     public void renamePlaylist(){

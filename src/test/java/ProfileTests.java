@@ -7,14 +7,15 @@ import pages.ProfilePage;
 import static org.testng.Assert.assertEquals;
 
 public class ProfileTests extends BaseTest {
-    LoginPage loginPage=new LoginPage();
-    ProfilePage profilePage= new ProfilePage();
-    HomePage homePage = new HomePage();
+    LoginPage loginPage=new LoginPage(getDriver());
+    ProfilePage profilePage= new ProfilePage(getDriver());
+    HomePage homePage = new HomePage(getDriver());
 
     @Test
-    public void changeProfile() {
+    public void changeProfile() throws InterruptedException {
 
         loginPage.login("chernyakma75@gmail.com", "chernyak050675!");
+        Thread.sleep(5000);
         profilePage.openProfile();
         profilePage.enterCurrentPassword("chernyak050675!");
         profilePage.enterCurrentEmail("chernyakma75@gmail.com");
