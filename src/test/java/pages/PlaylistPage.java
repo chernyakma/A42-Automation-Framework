@@ -8,11 +8,17 @@ import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 
 public class PlaylistPage extends BasePage {
-    private By myPlayList = By.cssSelector("[class='playlist playlist']>a");
-    private By delete = By.cssSelector("[title='Delete this playlist']");
-    public PlaylistPage(WebDriver driver){
+    public PlaylistPage(WebDriver driver) {
         super();
     }
+
+    public static PlaylistPage playlistPage(){
+
+        return new PlaylistPage(driver);
+    }
+    private By myPlayList = By.cssSelector("[class='playlist playlist']>a");
+    private By delete = By.cssSelector("[title='Delete this playlist']");
+
     public void clickPlaylist(){
         WebElement playListElement = waitUntilClickable(myPlayList);
         playListElement.click();
@@ -27,12 +33,12 @@ public class PlaylistPage extends BasePage {
     public void doubleClickPlaylist(){
         WebElement playListElement = waitUntilClickable(myPlayList);
       //  WebElement playlist = wait.until(ExpectedConditions.elementToBeClickable(By.cssSelector("[class='playlist playlist']>a")));
-        Actions actions = new Actions(driver);
+        Actions actions = new Actions(getDriver());
         actions.doubleClick(playListElement).perform();
     }
     public void enterPlaylistName ()  {
 
-        WebElement playlistInputField= driver.findElement(By.xpath("//*[@id='playlists']/ul/li[3]/input"));
+        WebElement playlistInputField= getDriver().findElement(By.xpath("//*[@id='playlists']/ul/li[3]/input"));
         playlistInputField.sendKeys((Keys.chord(Keys.CONTROL,"a",Keys.BACK_SPACE)));
         playlistInputField.sendKeys("SUPER");
         playlistInputField.sendKeys(Keys.ENTER);

@@ -5,7 +5,7 @@ import pages.LoginPage;
 
 public class SongsTests extends BaseTest{
     LoginPage loginPage=new LoginPage(getDriver());
-    SongsPage songsPage=new SongsPage();
+    SongsPage songsPage=new SongsPage(getDriver());
    @Test
 
     public void playSong() throws InterruptedException {
