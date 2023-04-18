@@ -1,3 +1,4 @@
+import org.openqa.selenium.support.PageFactory;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 import pages.HomePage;
@@ -43,6 +44,7 @@ public class PlaylistTests extends BaseTest{
 
 @Test
     public void deletePlayList() {
+    PageFactory.initElements(getDriver(),loginPage);
         loginPage.login("chernyakma75@gmail.com", "chernyak050675!");
          playlistPage.clickPlaylist();
          playlistPage.deletePlayList();
