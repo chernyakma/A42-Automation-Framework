@@ -1,3 +1,4 @@
+import org.openqa.selenium.support.PageFactory;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 import pages.HomePage;
@@ -42,11 +43,11 @@ public class PlaylistTests extends BaseTest{
     }*/
 
 @Test
-    public void deletePlayList() {
+    public void deletePlayList() throws InterruptedException {
+    PageFactory.initElements(getDriver(),playlistPage);
         loginPage.login("chernyakma75@gmail.com", "chernyak050675!");
-         playlistPage.clickPlaylist();
-         playlistPage.deletePlayList();
-
+        playlistPage.clickPlaylist();
+        playlistPage.deletePlayList();
     Assert.assertTrue(homePage.getSuccessBanner().isDisplayed());
     }
     }
