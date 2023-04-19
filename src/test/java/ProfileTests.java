@@ -1,3 +1,4 @@
+import org.openqa.selenium.support.PageFactory;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 import pages.HomePage;
@@ -13,6 +14,7 @@ public class ProfileTests extends BaseTest {
 
     @Test
     public void changeProfile() {
+        PageFactory.initElements(getDriver(),loginPage);
 
         loginPage.login("chernyakma75@gmail.com", "chernyak050675!");
         profilePage.openProfile();

@@ -1,9 +1,12 @@
+import org.openqa.selenium.support.PageFactory;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 import pages.HomePage;
 import pages.PlaylistPage;
 import pages.LoginPage;
 import pages.ProfilePage;
+
+import java.util.List;
 
 public class PlaylistTests extends BaseTest{
     LoginPage loginPage=new LoginPage();
@@ -12,41 +15,35 @@ public class PlaylistTests extends BaseTest{
     HomePage homePage = new HomePage();
 
 
- /* @Test
-    public void renamePlaylist(){
-        login("chernyakma75@gmail.com", "te$t$tudent");
-        choosePlaylist();
-        doubleClickPlaylist();
-        enterPlaylistName();
-        successShow();
-
-    }
-    private void choosePlaylist(){
-        wait.until(ExpectedConditions.elementToBeClickable(By.cssSelector("[class='playlist playlist']>a"))).click();
-    }
-    public void doubleClickPlaylist(){
-        WebElement playlist = wait.until(ExpectedConditions.elementToBeClickable(By.cssSelector("[class='playlist playlist']>a")));
-        actions.doubleClick(playlist).perform();
-    }
-    public void enterPlaylistName ()  {
-
-        WebElement playlistInputField= driver.findElement(By.xpath("//*[@id='playlists']/ul/li[3]/input"));
-        playlistInputField.sendKeys((Keys.chord(Keys.CONTROL,"a",Keys.BACK_SPACE)));
-        playlistInputField.sendKeys("SUPER");
-        playlistInputField.sendKeys(Keys.ENTER);
-
-    }
-    public void successShow(){
-        WebElement SuccessShow = wait.until(ExpectedConditions.visibilityOfElementLocated(By.cssSelector(".success.show")));
-        Assert.assertTrue(SuccessShow.isDisplayed());
-    }*/
 
 @Test
     public void deletePlayList() {
+    PageFactory.initElements(getDriver(),loginPage);
         loginPage.login("chernyakma75@gmail.com", "chernyak050675!");
          playlistPage.clickPlaylist();
          playlistPage.deletePlayList();
 
     Assert.assertTrue(homePage.getSuccessBanner().isDisplayed());
+    }
+    @Test
+    public void renamePlaylist(){
+        PageFactory.initElements(getDriver(),loginPage);
+        loginPage.login("chernyakma75@gmail.com", "chernyak050675!");
+        playlistPage.clickPlaylist();
+        playlistPage.doubleClickPlaylist();
+        playlistPage.enterPlaylistName();
+        homePage.getSuccessBanner();
+
+    }
+    @Test
+    public void addPlaylist() throws InterruptedException {
+        PageFactory.initElements(getDriver(), loginPage);
+        loginPage.login("chernyakma75@gmail.com", "chernyak050675!");
+        String plName = "RockStars 15";
+        playlistPage.createPlaylist(plName);
+        Thread.sleep(2000);
+        List<String> playlistNames = playlistPage.getPlaylistNames();
+        System.out.println(playlistNames);
+        Assert.assertTrue(playlistNames.contains(plName));
     }
     }

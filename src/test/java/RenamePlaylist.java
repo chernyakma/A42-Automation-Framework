@@ -1,3 +1,4 @@
+import org.openqa.selenium.support.PageFactory;
 import org.testng.annotations.Test;
 import pages.HomePage;
 import pages.PlaylistPage;
@@ -12,6 +13,7 @@ public class RenamePlaylist extends BaseTest{
 
 @Test
     public void renamePlaylist(){
+    PageFactory.initElements(getDriver(),loginPage);
     loginPage.login("chernyakma75@gmail.com", "chernyak050675!");
     playlistPage.clickPlaylist();
     playlistPage.doubleClickPlaylist();
