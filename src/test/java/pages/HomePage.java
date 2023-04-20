@@ -40,6 +40,7 @@ public class HomePage extends BasePage{
     }
 
     public WebElement getAvatar(){
+
         return waitUntilVisible(avatarIcon);
     }
 }

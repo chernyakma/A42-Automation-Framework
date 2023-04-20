@@ -49,6 +49,7 @@ public class PlaylistTests extends BaseTest{
     PageFactory.initElements(getDriver(),playlistPage);
         loginPage.login("chernyakma75@gmail.com", "chernyak050675!");
         playlistPage.clickPlaylist();
+       // Thread.sleep(4000);
         playlistPage.deletePlayList();
 
      Assert.assertTrue(homePage.getSuccessBanner().isDisplayed());

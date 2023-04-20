@@ -55,7 +55,7 @@ public class BasePage {
     }
     public WebElement waitUntilVisible(By element) {
        //return wait.until(ExpectedConditions.visibilityOfElementLocated(element));
-        return new WebDriverWait(THREAD_LOCAL.get(), Duration.ofSeconds(10)).until(ExpectedConditions.visibilityOfElementLocated(element));
+        return new WebDriverWait(THREAD_LOCAL.get(), Duration.ofSeconds(4)).until(ExpectedConditions.visibilityOfElementLocated(element));
     }
     public WebElement waitUntilClickable(By element){
        // return wait.until(ExpectedConditions.elementToBeClickable(element));
