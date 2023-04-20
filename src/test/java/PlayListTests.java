@@ -6,6 +6,8 @@ import pages.PlaylistPage;
 import pages.LoginPage;
 import pages.ProfilePage;
 
+import java.net.MalformedURLException;
+
 public class PlaylistTests extends BaseTest{
     LoginPage loginPage=new LoginPage(getDriver());
     PlaylistPage playlistPage= new PlaylistPage(getDriver());
@@ -48,6 +50,7 @@ public class PlaylistTests extends BaseTest{
         loginPage.login("chernyakma75@gmail.com", "chernyak050675!");
         playlistPage.clickPlaylist();
         playlistPage.deletePlayList();
-    Assert.assertTrue(homePage.getSuccessBanner().isDisplayed());
+
+     Assert.assertTrue(homePage.getSuccessBanner().isDisplayed());
     }
     }

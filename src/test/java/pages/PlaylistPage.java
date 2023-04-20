@@ -7,6 +7,8 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 
+import java.net.MalformedURLException;
+
 public class PlaylistPage extends BasePage {
     public PlaylistPage(WebDriver driver) {
         super();
@@ -17,7 +19,7 @@ public class PlaylistPage extends BasePage {
         return new PlaylistPage(driver);
     }
     private By myPlayList = By.cssSelector("[class='playlist playlist']>a");
-    private By delete = By.cssSelector("[title='Delete this playlist']");
+    private By delete = By.cssSelector("button[title='Delete this playlist']");
 
     public void clickPlaylist(){
         WebElement playListElement = waitUntilClickable(myPlayList);
@@ -25,11 +27,11 @@ public class PlaylistPage extends BasePage {
     }
     public void deletePlayList(){
         WebElement deleteList = waitUntilClickable(delete);
-        deleteList.click();
+        Actions actions=new Actions(getDriver());
+        actions.click(deleteList).perform();
+    //    actions.perform();
+        //  deleteList.click();
     }
-  //  private void choosePlaylist(){
-   //     wait.until(ExpectedConditions.elementToBeClickable(By.cssSelector("[class='playlist playlist']>a"))).click();
-  //  }
     public void doubleClickPlaylist(){
         WebElement playListElement = waitUntilClickable(myPlayList);
       //  WebElement playlist = wait.until(ExpectedConditions.elementToBeClickable(By.cssSelector("[class='playlist playlist']>a")));
