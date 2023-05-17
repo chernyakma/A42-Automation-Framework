@@ -4,7 +4,6 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
-import org.openqa.selenium.support.ui.ExpectedConditions;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -93,4 +92,9 @@ public class PlaylistPage extends BasePage {
         return playlistNames;
 
     }
-}
+      //     public List<Integer> getSongsNumber() {
+      //       List<WebElement> songs = getDriver().findElements(By.cssSelector("#playlistWrapper .song-item"));
+        //     int number = songs.size();
+          //   return number;
+         }
+
